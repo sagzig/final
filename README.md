@@ -296,10 +296,14 @@ Solution:
 Question 4: EXPORT the yaml of the replicaset and pods of this deployment
 
 Solution:
+YAML File of the replicaset here - https://github.com/sagzig/final/blob/main/replicaset.yaml
+YAML File of the Pods here - https://github.com/sagzig/final/blob/main/exportpods.yaml
 
 Question 5: Delete the deployment you just created and watch all the pods are also being deleted
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078611-ce6f7d8f-8659-4e6d-b1e0-3aa745d2399d.png)
+
 
 Question 6: Create a deployment of webapp with image nginx:1.17.1 with container port 80 and verify the image version
 a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp.yaml
@@ -307,17 +311,31 @@ b. add the port section (80) and create the deployment
 
 Solution:
 
+6.a:
+Building the configuration and editing the file:
+![image](https://user-images.githubusercontent.com/31998392/126078635-3096bd63-e52a-4e61-ae33-d48b61be1b92.png)
+
+6.b: 
+Running the file after editing and verifying the port 80 attached:
+![image](https://user-images.githubusercontent.com/31998392/126078661-581e2609-b1c8-4766-9c9c-a4a3cc635a1e.png)
+
+
 Question 7: Update the deployment with the image version 1.17.4 and verify
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078679-e78ce63e-847e-4c15-89ee-0a46c1bba6c7.png)
+
 
 Question 8: Check the rollout history and make sure everything is ok after the update
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078682-f3e5775b-4f5f-4881-b7c9-7a3864e1cf2a.png)
 
 Question 9: Undo the deployment to the previous version 1.17.1 and verify Image has the previous version
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078684-54777f0f-cb63-4773-b4a9-c71111a78060.png)
+
 
 Question 10: Update the deployment with the wrong image version 1.100 and verify something is wrong with the deployment
 a. Expect: kubectl get pods (ImagePullErr)
@@ -329,10 +347,29 @@ and verify nothing is going on
 
 Solution:
 
+10.a:
+![image](https://user-images.githubusercontent.com/31998392/126078754-12319e28-0620-481e-84a5-fba05402e448.png)
+
+
+10.b:
+![image](https://user-images.githubusercontent.com/31998392/126078769-c729e8c5-28c0-44b3-97a3-7aeea6920c82.png)
+
+10.c:
+![image](https://user-images.githubusercontent.com/31998392/126078787-8deb94ad-c38d-4d8f-a31e-72c0be0295f6.png)
+
+10.d:
+![image](https://user-images.githubusercontent.com/31998392/126078791-b1f2cb84-ca4f-49a2-ae6f-f28eab7f68f4.png)
+
+10.e:
+![image](https://user-images.githubusercontent.com/31998392/126078799-3f822544-f73a-48d9-a9a5-729eb3a29ef6.png)
+
+
 Question 11: Apply the autoscaling to this deployment with minimum 10 and maximum 20 replicas and target CPU of 85% and verify hpa is created and replicas are increased to 10 from 1
 
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078808-6edbb323-cfe6-4287-a31d-19e666660dbd.png)
+
 
 Question 12: This question does not exists
 
@@ -340,6 +377,8 @@ Question 12: This question does not exists
 Question 13: Clean the cluster by deleting deployment and hpa you just created
 
 Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078816-84f7c8a6-e3bb-43c6-af67-96dcafa99532.png)
+
 
 Question 14: Create a job and make it run 10 times one after one (run > exit > run >exit ..) using the following configuration:
 kubectl create job hello-job --image=busybox --dry-run -o yaml -- echo "Hello I am from job" > hello-job.yaml”
@@ -347,4 +386,37 @@ a. Add to the above job completions: 10 inside the yaml
 
 
 Solution:
+Editing the file and edditng the "completion:10" into it:
+
+![image](https://user-images.githubusercontent.com/31998392/126078826-4bae7e86-767d-4419-a81e-89a3d8a69f9c.png)
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+Part 4
+
+Question 1: Create a file called config.txt with two values key1=value1 and key2=value2 and verify the file
+
+Solution:
+I ran the given commands and received the file:
+![image](https://user-images.githubusercontent.com/31998392/126078864-cde67e2e-b80c-4a95-85a5-238d9c2723bc.png)
+
+
+Question 2: Create a configmap named keyvalcfgmap and read data from the file config.txt and verify that configmap is created correctly
+
+Solution:
+Creating the ConfigMap:
+![image](https://user-images.githubusercontent.com/31998392/126078895-cd6bceda-3acd-44a2-a0c3-58973a098c26.png)
+
+
+Question 3: Create an nginx pod and load environment values from the above configmap keyvalcfgmap and exec into the pod and verify the environment variables and delete the pod
+// first run this command to save the pod yml
+kubectl run nginx --image=nginx --restart=Never --dry-run -o yaml > nginx-pod.yml
+
+Solution:
+Editing the given file:
+![image](https://user-images.githubusercontent.com/31998392/126079025-7bffa4ef-7db0-4f14-9c1e-7e9943315452.png)
+
+Running the file and checking that it's built with the ConfigMap:
+![image](https://user-images.githubusercontent.com/31998392/126078933-65265239-cd73-4d59-b856-182bdab75904.png)
 
