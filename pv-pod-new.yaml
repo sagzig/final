@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-storage-sagi
+spec:
+  volumes:
+    - name: pv-analytics-storage
+      emptyDir: {}
+  containers:
+    - name: redis-storage-container
+      image: redis:alpine
+      volumeMounts:
+        - mountPath: "/data/redis"
+          name: pv-analytics-storage
