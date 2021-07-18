@@ -157,5 +157,194 @@ ________________________________________________________________________________
 
 Part 2
 
+Question 1: Type the command for: Get pods with label information
 
+Solution: kubectl get pods --show-labels
+
+Question 2: Create 5 nginx pods in which two of them is labeled env=prod and three of them is labeled env=dev
+
+Creation of 2 pods labeled env=prod YAML File(2pods.yaml) here- https://github.com/sagzig/final/blob/main/2pods.yaml
+Creation of 3 pods labeled env=dev YAML File(3pods.yaml) here- https://github.com/sagzig/final/blob/main/3pods.yaml
+
+Question 3: Verify all the pods are created with correct labels
+
+Solution: 
+![image](https://user-images.githubusercontent.com/31998392/126078040-f213decf-19ee-4da8-9327-d02357debc64.png)
+
+Question 4: Get the pods with label env=dev
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078049-9d754c93-1897-4d86-8af9-ed3c42709eac.png)
+
+Question 5: Get the pods with label env=dev and also output the labels
+
+Solution: ![image](https://user-images.githubusercontent.com/31998392/126078054-07079457-594e-4e06-b940-a169877b9f4a.png)
+
+Question 6: Get the pods with label env=prod
+
+Solution: 
+![image](https://user-images.githubusercontent.com/31998392/126078065-a105ebcc-47f2-4db6-a165-18cd92c202e1.png)
+
+Question 7: Get the pods with label env=prod and also output the labels
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078091-e61c0438-f9b5-4ab9-ba0d-d42430b44f9d.png)
+
+
+Question 8: Get the pods with label env
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078096-944faf99-4feb-4192-913c-1e3b788bc99f.png)
+
+
+Question 9: Get the pods with labels env=dev and env=prod
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078101-cb0ec539-eea5-4570-bb16-1d71f412f699.png)
+
+
+Question 10: Get the pods with labels env=dev and env=prod and output the labels as well
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078111-91fb2952-534d-4776-8d44-329763c1523d.png)
+
+
+Question 11: Change the label for one of the pod to env=uat and list all the pods to verify
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078115-53c567a0-ddca-4d21-af99-d39abca5028f.png)
+
+
+Question 12: Remove the labels for the pods that we created now and verify all the labels are removed
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078125-622c325d-a2c9-4bda-a6ac-172468d54c9f.png)
+
+
+Question 13: Let’s add the label app=nginx for all the pods and verify (using kubectl)
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078132-c2549204-75cf-4f3b-870e-306bb99ba939.png)
+
+
+Question 14: Get all the nodes with labels (if using minikube you would get only master node)
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078135-42909d48-27a9-433e-909d-fc32495f9c2b.png)
+
+
+Question 15: Label the worker node nodeName=nginxnode
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078139-b3bf0dcd-29fe-4d73-b985-731ef8a29957.png)
+
+Question 16: Create a Pod that will be deployed on the worker node with the label nodeName=nginxnode
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078152-e0048167-c431-4b6c-986e-d3f768bc9b58.png)
+
+Create a pod YAML File(question16.yaml) here- https://github.com/sagzig/final/blob/main/question16.yaml
+
+Question 17:  Verify the pod that it is scheduled with the node selector on the right node... fix it if it’s not behind scheduled.
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078192-4727254e-12ec-4905-a68d-65fb4c107efe.png)
+
+
+Question 18: Verify the pod nginx that we just created has this label
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078194-2eaf4a9d-4b0b-4dad-8bf6-7443201656d8.png)
+
+
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+Part 3
+
+
+Question 1: Create a deployment called webapp with image nginx with 5 replicas
+a. Use the below command to create a yaml file.
+i. kubectl create deploy webapp --image=nginx --dry-run -o yaml > webapp.yaml
+ii. Edit it and add 5 replica’s
+
+Solution:
+
+1.a:
+Editing the file
+
+![image](https://user-images.githubusercontent.com/31998392/126078229-df695914-89eb-45dd-9fab-5ca324a2e5fc.png)
+
+1.b:
+
+Checking replicas added 
+
+![image](https://user-images.githubusercontent.com/31998392/126078243-8156a5cb-247b-4346-988e-cfac0556300b.png)
+
+Question 2: Get the deployment rollout status
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078274-db2c6478-6e25-4e50-99ee-1c0ece903dbb.png)
+
+Question 3: Get the replicaset that created with this deployment
+
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126078283-33206b70-94b6-4b14-88b5-d268d8867de6.png)
+
+
+Question 4: EXPORT the yaml of the replicaset and pods of this deployment
+
+Solution:
+
+Question 5: Delete the deployment you just created and watch all the pods are also being deleted
+
+Solution:
+
+Question 6: Create a deployment of webapp with image nginx:1.17.1 with container port 80 and verify the image version
+a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp.yaml
+b. add the port section (80) and create the deployment
+
+Solution:
+
+Question 7: Update the deployment with the image version 1.17.4 and verify
+
+Solution:
+
+Question 8: Check the rollout history and make sure everything is ok after the update
+
+Solution:
+
+Question 9: Undo the deployment to the previous version 1.17.1 and verify Image has the previous version
+
+Solution:
+
+Question 10: Update the deployment with the wrong image version 1.100 and verify something is wrong with the deployment
+a. Expect: kubectl get pods (ImagePullErr)
+b. Undo the deployment with the previous version and verify everything is Ok
+c. kubectl rollout history deploy webapp --revision=7
+d. Check the history of the specific revision of that deployment
+e. update the deployment with the image version latest and check the history
+and verify nothing is going on
+
+Solution:
+
+Question 11: Apply the autoscaling to this deployment with minimum 10 and maximum 20 replicas and target CPU of 85% and verify hpa is created and replicas are increased to 10 from 1
+
+
+Solution:
+
+Question 12: This question does not exists
+
+
+Question 13: Clean the cluster by deleting deployment and hpa you just created
+
+Solution:
+
+Question 14: Create a job and make it run 10 times one after one (run > exit > run >exit ..) using the following configuration:
+kubectl create job hello-job --image=busybox --dry-run -o yaml -- echo "Hello I am from job" > hello-job.yaml”
+a. Add to the above job completions: 10 inside the yaml
+
+
+Solution:
 
