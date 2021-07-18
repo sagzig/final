@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: use-pv
+  name: use-pvspec-sagi
+spec:
+ containers:
+ - image: nginx
+   name: use-pv
+   resources: {}
+   volumeMounts:
+     - name: pv-1-sagi
+       mountPath: /data
+ volumes:
+ - name: pv-1-sagi
+ dnsPolicy: ClusterFirst
+ restartPolicy: Always
+status: {}
