@@ -13,15 +13,18 @@ Pod Name: messaging
 Image: redis:alpine
 Labels: tier=msg
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076060-9f220edb-8668-4128-aa3a-6812b9b13c46.png)
+Solution: 
+![image](https://user-images.githubusercontent.com/31998392/126076060-9f220edb-8668-4128-aa3a-6812b9b13c46.png)
 
 Question 3: Create a namespace named apx-x998-yourname
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076089-27db84c4-a4db-47e6-a8a5-74da90ee347f.png)
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126076089-27db84c4-a4db-47e6-a8a5-74da90ee347f.png)
 
 Question 4: Get the list of nodes in JSON format and store it in a file at /tmp/nodes-yourname
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076102-f0bea894-01a0-47fc-87ac-4a560672f5df.png)
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126076102-f0bea894-01a0-47fc-87ac-4a560672f5df.png)
 
 Question 5: Create a service messaging-service to expose the messaging application within the
 cluster on port 6379.
@@ -31,7 +34,8 @@ c. Port: 6379
 d. Type: ClusterIp
 e. Use the right labels
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076167-9a991bd1-512e-44ab-bcea-824a093a6c8d.png)
+Solution: 
+![image](https://user-images.githubusercontent.com/31998392/126076167-9a991bd1-512e-44ab-bcea-824a093a6c8d.png)
 
 Question 6: Same question as question 5.
 
@@ -40,14 +44,16 @@ a. Name: hr-web-app
 b. Image: kodekloud/webapp-color
 c. Replicas: 2
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076188-8b3ccfc1-5ac1-4872-8627-544df7cf973d.png)
+Solution: 
+![image](https://user-images.githubusercontent.com/31998392/126076188-8b3ccfc1-5ac1-4872-8627-544df7cf973d.png)
 
 Question 8: Create a static pod named static-busybox on the master node that uses the busybox image and the command sleep 1000
 a. Name: static-busybox
 b. Image: busybox
 c. Replicas: 2
 
-Solution: ![image](https://user-images.githubusercontent.com/31998392/126076221-348833df-e448-48e3-9500-e7165af30061.png)
+Solution:
+![image](https://user-images.githubusercontent.com/31998392/126076221-348833df-e448-48e3-9500-e7165af30061.png)
 
 
 Qutestion 9: Create a POD in the finance-yourname namespace named temp-bus with the image
