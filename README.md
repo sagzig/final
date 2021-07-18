@@ -426,3 +426,4 @@ Editing the given file:
 Running the file and checking that it's built with the ConfigMap:
 ![image](https://user-images.githubusercontent.com/31998392/126078933-65265239-cd73-4d59-b856-182bdab75904.png)
 
+The File(nginx-pod) used to created to pod after editing, here- https://github.com/sagzig/final/blob/main/nginx-pod.yml
